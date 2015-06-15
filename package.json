@@ -1,0 +1,28 @@
+{
+	"name": "GregoryCharte",
+	"title": "GregoryCharte",
+	"version": "0.0.1",
+	"homepage": "",
+	"author": {
+		"name": "La Grange",
+		"email": "info@la-grange.ca"
+	},
+	"devDependencies": {
+		"grunt-contrib-watch": "~0.4.4",
+		"grunt": "~0.4.4",
+		
+			"grunt-contrib-sass": "latest",
+		
+		"grunt-contrib-uglify": "latest",
+		"grunt-contrib-concat": "latest",
+	   	
+		"grunt-bowercopy":"latest",
+    	"time-grunt": "latest",
+    	"jit-grunt": "latest"
+	},
+	"dependencies" : {
+			
+	},
+	
+	"keywords": []
+}

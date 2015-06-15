@@ -1,0 +1,26 @@
+{
+  "name": "GregoryCharte",
+  "version": "0.0.1",
+  "dependencies": {
+	
+	
+	
+	
+
+	
+	
+	
+	"imagesloaded": "~3.1.4",
+    "jquery": "<2",
+    "es5-shim" : "latest",
+    "console-polyfill" : "latest",
+	"lodash" : "latest",
+
+	
+	"modernizr" : "latest",
+	"placeholder.js" : "https://github.com/jamesallardice/Placeholders.js.git",
+	"bootstrap-sass": "~3"
+  },
+  "private": true
+}
+

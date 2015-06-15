@@ -1,0 +1,52 @@
+$hero-height: 690px !default;
+
+$hero-title-style: hero_title_style_default !default;
+$hero-subtitle-style: hero_subtitle_style_default !default;
+
+%hero_title_style_default {
+	font-size: 60px;
+	text-transform: uppercase;
+	font-weight: $font-weight-bold;
+	color: #fff;
+	text-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+%hero_subtitle_style_default {
+	font-size: 20px;
+	font-weight: $font-weight-semibold;
+	color: #fff;
+	text-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.hero {
+	width: 100%;
+	height: $hero-height;
+	background-size: cover;
+	text-align: center;
+
+	> .container, .container > .row {
+		height: 100%;
+
+		[class*=col-] {
+			height: 100%;
+			position:relative;
+		}
+	}
+
+	.hero-content {
+		width: 100%;
+		position:absolute;
+		top:50%;
+		left:50%;
+		@include vendor(transform, translate(-50%, -50%));
+
+		.title {
+			@extend %#{$hero-title-style};
+			margin-top: 50px;
+		}
+		.subtitle {
+			@extend %#{$hero-subtitle-style};
+			margin-bottom: 50px;
+		}
+	}
+}

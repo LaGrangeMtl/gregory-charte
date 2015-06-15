@@ -1,0 +1,52 @@
+$caption-quote-text-style: caption_quote_text_style_default !default;
+$caption-quote-person-style: caption_quote_person_style_default !default;
+$caption-quote-role-style: caption_quote_role_style_default !default;
+$caption-quote-font-color: #000 !default;
+
+$caption-stroke-margin: 25px !default;
+$caption-stroke-width: 25px !default;
+$caption-stroke-height: 1px !default;
+
+%caption_quote_text_style_default {
+	font-size: 18px;
+	font-weight: $font-weight-light;
+}
+
+%caption_quote_person_style_default {
+	font-size: 14px;
+}
+
+%caption_quote_role_style_default {
+	font-size: 12px;
+	font-style: italic;
+}
+
+blockquote {
+	margin:0;
+	text-align: center;
+	p {
+		@extend %#{$caption-quote-text-style};
+		margin:0;
+		&:before {
+			content: "«";
+		}
+		&:after {
+			content: "»";
+		}
+	}
+
+	hr {
+		width: $caption-stroke-width;
+		margin: $caption-stroke-margin auto;
+		border-color: #000;
+		border-width: $caption-stroke-height;
+	}
+
+	.person {
+		@extend %#{$caption-quote-person-style};
+	}
+
+	.role {
+		@extend %#{$caption-quote-role-style};
+	}
+}
