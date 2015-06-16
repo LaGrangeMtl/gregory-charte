@@ -17,24 +17,30 @@
 		<title>Gregory Charte</title>
 	</head>
 	<body>
-		<!-- Hero -->
-		<?php include('inc/hero.php'); ?>
-		<!-- End Hero -->
+		<div class="page-wrap">
+			<!-- Menu -->
+			<?php include('inc/menu.php'); ?>
+			<!-- End menu -->
 
-		<!-- Button types -->
-		<?php include('inc/button-types.php'); ?>
-		<!-- End button types -->
+			<!-- Hero -->
+			<?php include('inc/hero.php'); ?>
+			<!-- End Hero -->
 
-		<!-- Cards -->
-		<?php include('inc/cards.php'); ?>
-		<!-- End cards -->
-		
-		<!-- Blockquotes -->
-		<?php include('inc/blockquotes.php'); ?>
-		<!-- End Blockquotes -->
-		
-		<!-- Form styles -->
-		<?php include('inc/forms.php'); ?>
-		<!-- End form styles -->
+			<!-- Button types -->
+			<?php include('inc/button-types.php'); ?>
+			<!-- End button types -->
+
+			<!-- Cards -->
+			<?php include('inc/cards.php'); ?>
+			<!-- End cards -->
+			
+			<!-- Blockquotes -->
+			<?php include('inc/blockquotes.php'); ?>
+			<!-- End Blockquotes -->
+			
+			<!-- Form styles -->
+			<?php include('inc/forms.php'); ?>
+			<!-- End form styles -->
+		</div>
 	</body>
 </html>

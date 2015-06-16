@@ -1,9 +1,29 @@
-$color-accent-primary: #0F8FBE;
-$color-accent-secondary: #ffffff;
 
-$color-text-primary: #000000;
+//=========================================================
+// VARIABLES DEFINITION
+//=========================================================
 
-$color-background-primary: #ffffff;
+	//==================================
+	// COLORS
+	//==================================
+		$blue55: #0F8FBE;
+
+		$gray98: #f9f9f9;
+
+		$white: #fff;
+		$black: #000;
 
 
-$grid-gutter-width: 10px;
+
+//=========================================================
+// VARIABLES USAGE
+//=========================================================
+
+	$color-accent-primary: $blue55;
+	$color-accent-secondary: $white;
+
+	$color-text-primary: $white;
+
+	$color-background-primary: $white;
+
+	$grid-gutter-width: 10px;

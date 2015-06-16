@@ -1,0 +1,63 @@
+$menu-head-height: 70px !default;
+$menu-head-background-color: $white !default;
+$menu-head-border: 1px solid $gray98 !default;
+$menu-head-font-size: 16px !default; 
+
+$menu-footer-height: auto !default;
+$menu-footer-background-color: $black !default; 
+
+
+[class^=menu] {
+	font-size: 0;
+
+	&[class*=head] {
+		height: $menu-head-height;
+		background: $menu-head-background-color;
+		border-bottom: $menu-head-border;
+
+		.logo {
+			display: block;
+			height: $menu-head-height;
+			background: url('../img/logo.png') center left no-repeat;
+
+			@include retina-bg(
+				$image: 'logo',
+				$image-format: 'png',
+				$settings: (
+					(
+						dppx: 1.5,
+						min-width: 768px,
+						width: 100px,
+						height: 70px
+					), // Seems that we need that comma, else I get an error
+					   // ("dppx" 1.5) is not a map for map-get.
+				)
+			);/**/
+		}
+
+		[class^=menu-item] {
+			font-size: $menu-head-font-size;
+		}
+	}
+
+	&[class*=footer] {
+		height: $menu-footer-height;
+		background: $menu-footer-background-color;
+	}
+
+	&[class*=sticky] {
+		position: fixed;
+			top: 0;
+			left: 0;
+
+		z-index: 1000;
+
+		width: 100%;
+	}
+}
+
+
+[class^=menu-item] {
+	display: inline-block;
+	
+}
