@@ -26,7 +26,6 @@
 				var tabContentHeight = tabContent.outerHeight();
 				tabContent.css({bottom:-tabContentHeight+'px'});
 			}, wait);
-
 		}
 
 

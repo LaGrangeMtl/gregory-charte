@@ -52,6 +52,10 @@ $button-clear-font-hover-color: $color-accent-primary !default;
 		max-width: $button-width;
 	}
 
+	&[class*=-fxw] {
+		width: $button-width;
+	}
+
 	&[class*=-fill] {
 		background: $button-filled-background-color;
 		color: $button-filled-font-color;

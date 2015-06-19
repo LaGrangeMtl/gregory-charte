@@ -13,19 +13,19 @@
 				<br>
 				<div>
 					<div class="perspective" style="perspective: 800px; display:inline-block;">
-						<a href="#" class="button-large-fw-fill anim-3dtiltdown">button-large-fw</a>
+						<a href="#" class="button-large-fxw-fill anim-3dtiltdown">button-large-fw</a>
 					</div>
 
 					<div class="perspective" style="perspective: 800px; display:inline-block;">
-						<a href="#" class="button-large-fw-fill anim-3dtiltup">button-large-fw</a>
+						<a href="#" class="button-large-fxw-fill anim-3dtiltup">button-large-fw</a>
 					</div>
 
 					<div class="perspective" style="perspective: 800px; display:inline-block;">
-						<a href="#" class="button-large-fw-fill anim-3dtiltleft">button-large-fw</a>
+						<a href="#" class="button-large-fxw-fill anim-3dtiltleft">button-large-fw</a>
 					</div>
 
 					<div class="perspective" style="perspective: 800px; display:inline-block;">
-						<a href="#" class="button-large-fw-fill anim-3dtiltright">button-large-fw</a>
+						<a href="#" class="button-large-fxw-fill anim-3dtiltright">button-large-fw</a>
 					</div>
 				</div>
 				<br>
@@ -40,10 +40,10 @@
 				<br>
 				<br>
 				<div>
-					<a href="#" class="button-large-fw-clear anim-slidedown">button</a>
-					<a href="#" class="button-large-fw-clear anim-slideup">button</a>
-					<a href="#" class="button-large-fw-clear anim-slideright">button</a>
-					<a href="#" class="button-large-fw-clear anim-slideleft"><i class="fa fa-play"></i>button</a>
+					<a href="#" class="button-large-fxw-clear anim-slidedown">button</a>
+					<a href="#" class="button-large-fxw-clear anim-slideup">button</a>
+					<a href="#" class="button-large-fxw-clear anim-slideright">button</a>
+					<a href="#" class="button-large-fxw-clear anim-slideleft"><i class="fa fa-play"></i>button</a>
 				</div>
 			</div>
 		</div>

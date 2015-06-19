@@ -7,10 +7,10 @@
 					<div class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, illum minima sint.</div>
 					
 					<div class="perspective" style="perspective: 800px; display:inline-block;">
-						<a href="#" class="button-large-fw-fill anim-3dtiltdown">Get Access</a>
+						<a href="#" class="button-large-fxw-fill anim-3dtiltdown">Get Access</a>
 					</div>
 					<div class="perspective" style="perspective: 800px; display:inline-block;">
-						<a href="#" class="button-large-fw-fill anim-3dtiltup">Watch The Video</a>
+						<a href="#" class="button-large-fxw-fill anim-3dtiltup">Watch The Video</a>
 					</div>
 				</div>
 			</div>
