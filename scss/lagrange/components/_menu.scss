@@ -1,7 +1,7 @@
 $menu-head-height: 70px !default;
 $menu-head-background-color: $white !default;
 $menu-head-border: 1px solid $gray98 !default;
-$menu-head-font-size: 16px !default; 
+$menu-head-item-style: menu_head_item_default;
 
 $menu-footer-height: auto !default;
 $menu-footer-background-color: $black !default; 
@@ -17,26 +17,169 @@ $menu-footer-background-color: $black !default;
 
 		.logo {
 			display: block;
-			height: $menu-head-height;
-			background: url('../img/logo.png') center left no-repeat;
 
-			@include retina-bg(
-				$image: 'logo',
-				$image-format: 'png',
-				$settings: (
-					(
-						dppx: 1.5,
-						min-width: 768px,
-						width: 100px,
-						height: 70px
-					), // Seems that we need that comma, else I get an error
-					   // ("dppx" 1.5) is not a map for map-get.
-				)
-			);/**/
+			@extend %hero_subtitle_default;
+			text-shadow: none;
+			font-size: 24px;
+			color: $color-text-primary;
+
+			height: $menu-head-height;
+			line-height: $menu-head-height;
+
+			@include hover() {
+				text-decoration: none;
+			}
+		}
+		
+		.navigation-row {
+			text-align: right;
+		}
+
+		.navigation {
+			list-style-type: none;
+			padding-left: 0;
+			display: inline-block;
+			background: $menu-head-background-color;
+		}
+
+		[class^=menu-tab] {
+			display: inline-block;
+			vertical-align: middle;
+			text-align: center;
+			position: relative;
+
+			i {
+				cursor: pointer;
+				display: block;
+				width: $menu-head-height;
+				height: $menu-head-height;
+				font-size: 22px;
+				line-height: $menu-head-height;
+				color: $color-light-primary;
+				background: $color-accent-primary;
+				position: relative;
+				z-index: 2;
+
+				@include transition(all, 0.3s);
+
+				&:after {
+					content: " ";
+					position: absolute;
+						bottom: 0;
+						left: 50%;
+
+					width: 0;
+					height: 0;
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					border-top: 8px solid $color-accent-primary;
+					
+					@include vendor(transform, translateX(-50%));
+					@include transition(all, 0.3s);
+				}
+
+				@include hover() {
+					background: $color-accent-primary-hover;
+
+					&:after {
+						border-top-color: $color-accent-primary-hover;
+					}
+				}
+
+			}
+
+			&[class*=dark] i {
+				background: $color-dark-secondary;
+
+				&:after {
+					border-top-color: $color-dark-secondary;
+				}
+
+				@include hover() {
+					background: $color-dark-secondary-hover;
+
+					&:after {
+						border-top-color: $color-dark-secondary-hover;
+					}
+				}
+			}
+
+			.tab-content {
+				padding: 15px 40px 40px 40px;
+				width: 400px;
+				background: $color-dark-primary;
+				font-size: 14px;
+				text-align: left;
+
+				position: absolute;
+					bottom: 0;
+					right: -$menu-head-height;
+
+				z-index: -1;
+
+				color: $color-light-primary;
+				@include transition(all, 0.3s);
+
+				h1 {
+					margin-top: 0;
+					font-weight: normal;
+				}
+
+				fieldset {
+					margin-bottom: 0;
+				}
+
+				.lost-password {
+					color: $color-light-primary;
+				}
+
+				.row-buttons {
+					margin-top: 25px;
+				}
+
+				input[type="submit"] {
+					margin: 0;
+					font-weight: $font-weight-bold;
+					max-width: 150px;
+				}
+			}
+
+			&.active {
+				i {
+					background: $color-accent-primary-hover;
+
+					&:after {
+						border-top-color: $color-accent-primary-hover;
+						bottom: -8px;
+					}
+				}
+
+				&[class*=dark] i {
+					background: $color-dark-secondary-hover;
+
+					&:after {
+						border-top-color: $color-dark-secondary-hover;
+					}
+				}
+			}
+
+			&:last-of-type .tab-content {
+				right: 0;
+			}
 		}
 
 		[class^=menu-item] {
-			font-size: $menu-head-font-size;
+			display: inline-block;
+			vertical-align: middle;
+			height: $menu-head-height;
+			line-height: $menu-head-height;
+			padding: 0 10px;
+
+			a {
+				display: block;
+				height: 100%;
+				@extend %#{$menu-head-item-style};
+			}
 		}
 	}
 
@@ -54,10 +197,4 @@ $menu-footer-background-color: $black !default;
 
 		width: 100%;
 	}
-}
-
-
-[class^=menu-item] {
-	display: inline-block;
-	
 }

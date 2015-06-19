@@ -45,12 +45,23 @@ fieldset {
 			@include vendor(transform, translate(0,0));
 		}
 	}
+
+	.clear-form & {
+		input[type=text],
+		input[type=email],
+		input[type=password],
+		input[type=number] {
+			border: 1px solid currentColor;
+			background: transparent;
+		}
+	}
 }
 
 input[type=checkbox] {
 	display: none;
 
-	~ label {
+	& + label {
 		padding-left: 30px;
+		cursor: pointer;
 	}
 }

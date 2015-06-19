@@ -30,7 +30,7 @@
 		@include vendor(transform, translate(0,-70px));
 	}
 		
-	.no-touch &:hover {
+	@include hover() {
 		.card-text {
 			@include vendor(transform, translate(0,-100%));
 

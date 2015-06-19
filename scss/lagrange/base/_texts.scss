@@ -15,6 +15,50 @@ body {
 	color: blue;
 }
 
+%hero_title_default {
+	font-size: 60px;
+	text-transform: uppercase;
+	font-weight: $font-weight-bold;
+	color: #fff;
+	text-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+%hero_subtitle_default {
+	font-size: 20px;
+	font-weight: $font-weight-semibold;
+	color: #fff;
+	text-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+%menu_head_item_default {
+	font-size: 14px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: $font-weight-semibold;
+	color: $color-text-primary;
+
+	@include hover() {
+		color: $color-accent-primary;
+	}
+}
+
+
+%link_default {
+	@include transition(all, 0.3s);
+
+	&, .no-touch &:hover, &:active, &:focus {
+		text-decoration: none;
+	}
+}
+
 .centered {
 	text-align: center;
+}
+
+.align-right {
+	text-align: right;
+}
+
+a {
+	@extend %link_default;
 }

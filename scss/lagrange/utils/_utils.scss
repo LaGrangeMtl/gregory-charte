@@ -1,3 +1,9 @@
+@mixin hover(){
+	.no-touch &:hover {
+		@content;
+	}
+}
+
 @mixin setBootstrapGutters($gutter){
 	$i: 1;
 	$list: ".container, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
@@ -51,6 +57,7 @@
 
 
 .half {
+	float: left;
 	width: 50%;
 }
 

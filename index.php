@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="css/main.css">
 		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="js/vendor/modernizr.js"></script>
+		<script src="js/vendor/greensock/TweenMax.min.js"></script>
+		<script src="js/menu.js"></script>
 		<script src="js/main.js"></script>
 
 		<title>Gregory Charte</title>

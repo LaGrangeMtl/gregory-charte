@@ -9,6 +9,8 @@
 		$blue55: #0F8FBE;
 
 		$gray98: #f9f9f9;
+		$gray30: #474746;
+		$gray25: #3c3c3a;
 
 		$white: #fff;
 		$black: #000;
@@ -20,9 +22,16 @@
 //=========================================================
 
 	$color-accent-primary: $blue55;
-	$color-accent-secondary: $white;
+	$color-accent-primary-hover: mix($black, $color-accent-primary, 10%);
+	
+	$color-dark-primary: $gray30;
+	$color-dark-primary-hover: mix($black, $color-dark-primary, 10%);
+	$color-dark-secondary: $gray25;
+	$color-dark-secondary-hover: mix($black, $color-dark-secondary, 10%);
+	
+	$color-light-primary: $white;
 
-	$color-text-primary: $white;
+	$color-text-primary: $gray30;
 
 	$color-background-primary: $white;
 
