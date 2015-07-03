@@ -9,7 +9,7 @@
 
 	
 	
-	
+	"jquery-selectric": "latest",
 	"imagesloaded": "~3.1.4",
     "jquery": "<2",
     "es5-shim" : "latest",

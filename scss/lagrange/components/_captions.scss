@@ -28,10 +28,10 @@ blockquote {
 		@extend %#{$caption-quote-text-style};
 		margin:0;
 		&:before {
-			content: "«";
+			content: "« ";
 		}
 		&:after {
-			content: "»";
+			content: " »";
 		}
 	}
 

@@ -73,8 +73,12 @@
 				</div>
 				<div class="col-md-3">
 					<div class="field">
-						<input id="country" name="country" type="text" value=""/>
-						<label for="country">Country</label>
+						<select name="country" id="country">
+							<option value="-1">Country</option>
+							<option value="ca">Canada</option>
+							<option value="fr">France</option>
+							<option value="us">United States</option>
+						</select>
 					</div>
 				</div>
 			</fieldset>
@@ -93,7 +97,7 @@
 				<div class="col-md-3">
 					<div class="field">
 						<input id="ccnumber" name="ccnumber" type="text" value=""/>
-						<label for="ccnumber">Crefit Card Number</label>
+						<label for="ccnumber">Credit Card Number</label>
 					</div>
 				</div>
 				<div class="col-md-1">
@@ -118,13 +122,15 @@
 			<fieldset class="row">
 				<div class="col-md-3">
 					<input id="terms" name="terms" type="checkbox"/>
-					<label for="terms">Agree <a href="#">terms &amp; services</a></label>
+					<label for="terms"><span class="cbox"></span>Agree <a href="#">terms &amp; services</a></label>
 				</div>
 				<div class="col-md-3">
 					<input id="subscribe" name="subscribe" type="checkbox"/>
-					<label for="subscribe">Subscribe to our Newsletter</label>
+					<label for="subscribe"><span class="cbox"></span>Subscribe to our Newsletter</label>
 				</div>
 			</fieldset>
+			<a href="#" class="btn-fill-fw">Subscribe</a>
+			<a href="#" class="btn-fill-icon-sq"><i class="fa fa-facebook"></i></a>
 		</form>
 	</div>
 </div>

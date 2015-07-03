@@ -3,6 +3,9 @@ $input-field-border-color: #969696 !default;
 $input-field-padding: 15px !default;
 $input-field-font-size: 14px !default;
 
+$input-checkbox-font-size: 11px !default;
+$input-checkbox-check-color: #fff !default;
+
 fieldset {
 	margin:0 0 50px 0;
 	padding:0;
@@ -60,8 +63,73 @@ fieldset {
 input[type=checkbox] {
 	display: none;
 
-	& + label {
+	& + label {
+		position:relative;
+		display: inline-block;
 		padding-left: 30px;
 		cursor: pointer;
+		line-height: 22px;
+		font-size: $input-checkbox-font-size;
+		
+		.cbox {
+			position:absolute;
+				top:50%;
+				left:0;
+			width: 22px;
+			height: 22px;
+			border: 1px solid $input-field-border-color;
+			background: rgba($color-accent-primary, 0);
+			@include vendor(transform, translate(0, -50%));
+			@include transition(all, 0.3s, $delay:0.3s);
+
+			&:before {
+				content: " ";
+				position:absolute;
+					top:2px;
+					left:3px;
+				width: 0;
+				height: 2px;
+				background: $input-checkbox-check-color;
+				@include vendor(transform-origin, top left);
+				@include vendor(transform, rotate(45deg));
+
+				@include transition(all, 0.3s, $delay:0s);
+			}
+
+			&:after {
+				content: " ";
+				position:absolute;
+					top:2px;
+					right:3px;
+				width: 0;
+				height: 2px;
+				background: $input-checkbox-check-color;
+				@include vendor(transform-origin, top right);
+				@include vendor(transform, rotate(-45deg));
+
+				@include transition(all, 0.3s, $delay:0s);
+			}
+		}
+	}
+
+	&:checked {
+		& + label {
+			.cbox {
+				border-color: rgba($color-accent-primary, 0);
+				background: $color-accent-primary;
+
+				@include transition(all, 0.3s, $delay:0);
+
+				&:before {
+					width: 22px;
+					@include transition(all, 0.3s, $delay:0.6s);
+				}
+
+				&:after {
+					width: 22px;
+					@include transition(all, 0.3s, $delay:0.4s);
+				}
+			}
+		}
 	}
 }

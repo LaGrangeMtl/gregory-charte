@@ -1,17 +1,22 @@
 $button-width: 230px !default;
+$button-font-size: 14px !default;
+$button-line-height: 20px !default;
 
 $button-text-transform: uppercase !default;
 $button-text-decoration: none !default;
 
+$button-icon-font-size: 24px !default;
+$button-icon-background-color: $color-dark-primary-hover !default;
+
 $button-padding: 20px !default;
-$button-padding-large: 30px !default;
+$button-padding-large: 25px !default;
 $button-padding-small: 10px !default;
 $button-padding-tiny: 5px !default;
 
 $button-filled-background-color: $color-accent-primary !default;
-$button-filled-background-hover-color: $color-light-primary !default;
+$button-filled-background-hover-color: $color-dark-primary !default;
 $button-filled-font-color: $color-light-primary !default;
-$button-filled-font-hover-color: $color-accent-primary !default;
+$button-filled-font-hover-color: $color-light-primary !default;
 
 $button-clear-border-width: 2px !default;
 $button-clear-border-color: $color-light-primary !default;
@@ -19,11 +24,13 @@ $button-clear-font-color: $color-light-primary !default;
 $button-clear-background-hover-color: $color-light-primary !default;
 $button-clear-font-hover-color: $color-accent-primary !default;
 
-[class^=button] {
+[class^=btn] {
 	display: inline-block;
 	position: relative;
 	margin: 0 10px;
 	padding: $button-padding;
+	font-size: $button-font-size;
+	line-height: $button-line-height;
 	text-align:center;
 	text-transform: $button-text-transform;
 	text-decoration: $button-text-decoration;
@@ -35,16 +42,56 @@ $button-clear-font-hover-color: $color-accent-primary !default;
 		text-decoration: $button-text-decoration;
 	}
 
+	&[class*=-sq] {
+		width: $button-line-height + $button-padding * 2;
+		height: $button-line-height + $button-padding * 2;
+	}
+
+	&[class*=-icon] i {
+		font-size: $button-font-size * 2;
+		position:absolute;
+			top:50%;
+			left:50%;
+		@include vendor(transform, translate(-50%, -50%));
+	}
+
 	&[class*=-large] {
 		padding: $button-padding-large;
+
+		&[class*=-sq] {
+			width: $button-line-height + $button-padding-large * 2;
+			height: $button-line-height + $button-padding-large * 2;
+		}
+
+		&[class*=-icon] i {
+			font-size: $button-font-size * 2.5;
+		}
 	}
 
 	&[class*=-small] {
 		padding: $button-padding-small;
+
+		&[class*=-sq] {
+			width: $button-line-height + $button-padding-small * 2;
+			height: $button-line-height + $button-padding-small * 2;
+		}
+
+		&[class*=-icon] i {
+			font-size: $button-font-size * 1.5;
+		}
 	}
 
 	&[class*=-tiny] {
 		padding: $button-padding-tiny;
+
+		&[class*=-sq] {
+			width: $button-line-height + $button-padding-tiny * 2;
+			height: $button-line-height + $button-padding-tiny * 2;
+		}
+
+		&[class*=-icon] i {
+			font-size: $button-font-size * 1;
+		}
 	}
 
 	&[class*=-fw] {
@@ -198,6 +245,17 @@ $button-clear-font-hover-color: $color-accent-primary !default;
 				right:0;
 				left:auto;
 			}
+		}
+	}
+
+	&[class*=-aside] {
+		padding-left: 60px;
+		i {
+			position:absolute;
+				top:50%;
+				left: 20px;
+			font-size: $button-icon-font-size;
+			@include vendor(transform, translate(0,-50%));
 		}
 	}
 }

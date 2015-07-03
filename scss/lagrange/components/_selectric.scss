@@ -1,0 +1,207 @@
+/*======================================
+	Selectric
+======================================*/
+$selectric-border-color: $input-field-border-color;
+$selectric-secondary-color: $color-dark-primary;
+$selectric-bg-color: $color-background-primary;
+$selectric-bg-hover-color: $color-light-primary-hover;
+$selectric-text-color: $color-dark-primary;
+$selectric-height: $input-field-height + 1;
+$spacing: 16px;
+$selectric-border-width: 1px;
+$selectric-inner-height: $selectric-height - ($selectric-border-width * 2);
+
+.selectric-wrapper {
+	max-width: 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.selectric-responsive {
+	width: 100%;
+}
+
+.selectric {
+	border: $selectric-border-width solid $selectric-border-color;
+	background: $selectric-bg-color;
+	position: relative;
+
+	.label {
+		text-align: left;
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin: 0 $selectric-inner-height 0 $spacing;
+		height: $selectric-inner-height;
+		line-height: $selectric-inner-height;
+		padding: 0;
+
+		font-weight: normal;
+	}
+
+	.button {
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: $selectric-inner-height;
+		height: $selectric-inner-height;
+		font-size: 0;
+
+		&:after {
+			position:absolute;
+				top:50%;
+				left:50%;
+			@include vendor(transform, translate(-50%,-50%));
+			content: "\f0d7";
+			font-family: "FontAwesome";
+			font-size: 20px;
+			color: $selectric-secondary-color;
+		}
+	}
+}
+
+.no-touch .selectric-hover .selectric {
+	border-color: darken($selectric-border-color, 10%);
+
+	.button {
+		color: darken($selectric-secondary-color, 10%);
+
+		&:after {
+			border-top-color: darken($selectric-secondary-color, 10%);
+		}
+	}
+}
+
+.selectric-open {
+	z-index: 9999;
+
+	.selectric {
+		border-color: darken($selectric-border-color, 10%);
+	}
+
+	.selectric-items {
+		display: block;
+	}
+}
+
+.selectric-disabled {
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	cursor: default;
+	user-select: none;
+}
+
+.selectric-hide-select {
+	position: relative;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+
+	select {
+		position: absolute;
+		left: -100%;
+		display: none;
+	}
+}
+
+.selectric-input {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 1px !important;
+	height: 1px !important;
+	outline: none !important;
+	border: none !important;
+	*font: 0/0 a !important;
+	background: none !important;
+}
+
+.selectric-temp-show {
+	position: absolute !important;
+	visibility: hidden !important;
+	display: block !important;
+}
+
+/* Items box */
+.selectric-items {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: $selectric-bg-color;
+	border: 1px solid darken($selectric-border-color, 10%);
+	border-top: 0;
+	z-index: -1;
+	box-shadow: 0 0 10px -6px;
+
+	.selectric-scroll {
+		height: 100%;
+		overflow: auto;
+	}
+
+	.selectric-above & {
+		top: auto;
+		bottom: 100%;
+	}
+
+	ul, li {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		font-size: 12px;
+		line-height: $selectric-inner-height;
+		min-height: $selectric-inner-height;
+	}
+
+	li {
+		display: block;
+		padding: 0 $spacing;
+		border-top: 1px solid #FFF;
+		border-bottom: 1px solid #EEE;
+		color: $color-text-primary;
+		cursor: pointer;
+
+		&.selected {
+			background: $selectric-bg-hover-color;
+		}
+
+		.no-touch &:hover {
+			background: $selectric-bg-hover-color;
+		}
+	}
+
+	.disabled {
+		filter: alpha(opacity=50);
+		opacity: 0.5;
+		cursor: default !important;
+		background: none !important;
+		color: #666 !important;
+		user-select: none;
+	}
+
+	.selectric-group {
+		.selectric-group-label {
+			font-weight: bold;
+			padding-left: 10px;
+			cursor: default;
+			user-select: none;
+			background: none;
+			color: #444;
+		}
+
+		&.disabled li {
+			filter: alpha(opacity=100);
+			opacity: 1;
+		}
+
+		li {
+			padding-left: 25px;
+		}
+	}
+}

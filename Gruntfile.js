@@ -5,6 +5,9 @@ module.exports = function(grunt) {
 	require('jit-grunt')(grunt);
 	require('time-grunt')(grunt);
 
+	var browserifyPackages = {};
+	browserifyPackages['js/app.js'] = ['app/charte/App.js'];
+
 	// Project configuration.
 	grunt.initConfig({
 		// Metadata.
@@ -26,19 +29,19 @@ module.exports = function(grunt) {
 				}
 			},
 			
-				vendor: {
-					options: {
-						destPrefix: 'js/vendor',
-					},
-					 files: {
-						'jquery.js' : 'jquery/dist/jquery.min.js',
-						'es5-shim.js' : 'es5-shim/es5-shim.min.js',
-						'es5-sham.js' : 'es5-shim/es5-sham.min.js',
-						'imagesloaded.js' : 'imagesloaded/imagesloaded.js',
-						
-						
-					}
+			vendor: {
+				options: {
+					destPrefix: 'js/vendor',
 				},
+				 files: {
+					'jquery.js' : 'jquery/dist/jquery.min.js',
+					'es5-shim.js' : 'es5-shim/es5-shim.min.js',
+					'es5-sham.js' : 'es5-shim/es5-sham.min.js',
+					'imagesloaded.js' : 'imagesloaded/imagesloaded.js',
+					'jquery.selectric.min.js' : 'jquery-selectric/public/jquery.selectric.min.js'
+					
+				}
+			}
 				
 			
 		},
@@ -72,6 +75,15 @@ module.exports = function(grunt) {
 				}
 			},
 			
+			prod: {
+				src: 'js/app.js',
+				dest: 'js/app.js'
+			},
+			common: {
+				src: 'js/common.js',
+				dest: 'js/common.js'
+			}
+			
 		},
 		
 		watch: {
@@ -81,25 +93,79 @@ module.exports = function(grunt) {
 			
 				tasks: ['sass']
 			
-			}
+			},
+			js: {
+				files: 'app/charte/**/*.js',
+				tasks: ['browserify:prod'/*, 'uglify:prod'*/]
+			},
+			commonjs: {
+				files: 'app/vendorShim.js',
+				tasks: ['browserify:common', 'uglify:common']
+			},
+		},
+		
+		sass: {
+			development: {
+				options: {
+					style : 'compressed'
+				},
+				files: {
+					"css/main.css": "scss/main.scss"
+				}
+			},
 		},
 
-		
-			sass: {
-				development: {
-					options: {
-						style : 'compressed'
+		browserify : {
+			options : {
+				external: ['greensock', 'jquery', 'gsapScrollToPlugin', 'promise', 'neutrino', 'imagesloaded', 'lodash', 'slick-carousel', 'selectric'],
+				browserifyOptions : {
+					debug: true
+				},
+				//
+			},
+			dev : {
+				files: browserifyPackages,
+				options : {
+					transform: [],
+					browserifyOptions : {
+						debug: true
 					},
-					files: {
-						"css/main.css": "scss/main.scss"
-					}
+				}
+			},
+			prod : {
+				files: browserifyPackages,
+				options : {
+					transform: [],
+				}
+			},
+			common: {
+				src: 'app/vendorShim.js',
+				dest: 'js/common.js',
+				options: {
+					alias:[
+						':lodash',
+						':imagesloaded',
+						':jquery',
+						':greensock',
+						':gsapScrollToPlugin',
+						'bluebird:promise',
+						':console-polyfill',
+						':slick-carousel',
+						':es5-shim',
+						':selectric'
+					],
+					debug: true,
+					external : null
 				},
 			}
+		},
 		
 	});
 
 	// Default task.
-	
+	grunt.registerTask('default', ['browserify:dev']);
+	grunt.registerTask('prod', ['browserify:prod', 'uglify:prod']);
+	grunt.registerTask('jslibs', ['browserify:common', 'uglify:common']);
 	grunt.registerTask('prebuild', ['concat:placeholder', 'bowercopy', 'uglify:prebuild']);
 	
 };

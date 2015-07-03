@@ -35,8 +35,8 @@
 
 						<fieldset>
 							<div class="half">
-								<input type="checkbox" name="login-remember" id="login-remember" />
-								<label for="login-remember">Remember me</label>
+								<input id="login-remember" name="login-remember" type="checkbox"/>
+								<label for="login-remember"><span class="cbox"></span>Remember me</label>
 							</div>
 							<div class="half align-right">
 								<a href="#" class="lost-password">Lost password ?</a>
@@ -44,7 +44,7 @@
 						</fieldset>
 
 						<fieldset class="row-buttons">
-							<input type="submit" value="Log in" class="button-fw-fill" />
+							<input type="submit" value="Log in" class="btn-fw-fill" />
 						</fieldset>
 					</form>
 				</div>	
@@ -63,7 +63,7 @@
 						</fieldset>
 
 						<fieldset class="row-buttons">
-							<input type="submit" value="Search" class="button-fw-fill" />
+							<input type="submit" value="Search" class="btn-fw-fill" />
 						</fieldset>
 					</form>
 				</div>	
