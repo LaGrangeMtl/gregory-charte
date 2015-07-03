@@ -12,8 +12,8 @@
 				</div>
 				<div class="col-md-3">
 					<div class="field">
-						<input id="fname" name="fname" type="text" value=""/>
-						<label for="fname">Name</label>
+						<input id="fname" name="fname" type="text" value="" class="validate[required]"/>
+						<label for="fname">Name<sup>*</sup></label>
 					</div>
 				</div>
 				<div class="col-md-3">
@@ -129,7 +129,7 @@
 					<label for="subscribe"><span class="cbox"></span>Subscribe to our Newsletter</label>
 				</div>
 			</fieldset>
-			<a href="#" class="btn-fill-fw">Subscribe</a>
+			<button type="submit" class="btn-fill-fw">Subscribe</button>
 			<a href="#" class="btn-fill-icon-sq"><i class="fa fa-facebook"></i></a>
 		</form>
 	</div>

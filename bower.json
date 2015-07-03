@@ -17,6 +17,7 @@
 	"lodash" : "latest",
 
 	
+	"validationengine":"https://github.com/posabsolute/jQuery-Validation-Engine.git#~2.6.4",
 	"modernizr" : "latest",
 	"placeholder.js" : "https://github.com/jamesallardice/Placeholders.js.git",
 	"bootstrap-sass": "~3"
