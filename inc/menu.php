@@ -14,12 +14,18 @@
 				<li class="menu-item">
 					<a href="#">Menu-item</a>
 				</li>
+				<li class="menu-item">
+					<a href="#">Longer menu-item</a>
+				</li>
 			</ul>
 			<div class="menu-tab" data-menu-tab="1">
 				<i class="fa fa-unlock"></i>
 				<div class="tab-content">
+					<div class="close-btn visible-xs visible-sm">
+						<i class="fa fa-times"></i>
+					</div>
 					<h1>Login</h1>
-					
+
 					<form action="" class="clear-form">
 						<fieldset>
 							<div class="field">
@@ -47,13 +53,16 @@
 							<input type="submit" value="Log in" class="btn-fw-fill" />
 						</fieldset>
 					</form>
-				</div>	
+				</div>
 			</div>
 			<div class="menu-tab-dark" data-menu-tab="2">
 				<i class="fa fa-search"></i>
 				<div class="tab-content">
+					<div class="close-btn visible-xs visible-sm">
+						<i class="fa fa-times"></i>
+					</div>
 					<h1>Search</h1>
-					
+
 					<form action="" class="clear-form">
 						<fieldset>
 							<div class="field">
@@ -66,7 +75,7 @@
 							<input type="submit" value="Search" class="btn-fw-fill" />
 						</fieldset>
 					</form>
-				</div>	
+				</div>
 			</div>
 		</div>
 	</div>
