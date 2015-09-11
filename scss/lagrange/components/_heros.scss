@@ -4,6 +4,7 @@ $hero-title-style: hero_title_default !default;
 $hero-subtitle-style: hero_subtitle_default !default;
 
 .hero {
+	background: blue;
 	width: 100%;
 	height: $hero-height;
 	background-size: cover;
@@ -29,7 +30,7 @@ $hero-subtitle-style: hero_subtitle_default !default;
 			@extend %#{$hero-title-style};
 			margin-top: 50px;
 		}
-		
+
 		.subtitle {
 			@extend %#{$hero-subtitle-style};
 			margin-bottom: 50px;

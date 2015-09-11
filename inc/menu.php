@@ -8,8 +8,25 @@
 				<li class="menu-item">
 					<a href="#">Menu-item</a>
 				</li>
-				<li class="menu-item">
-					<a href="#">Longer menu-item</a>
+				<li class="menu-item-parent">
+					<a href="#">Parent Menu-item <i class="fa fa-angle-right visible-xs-inline-block visible-sm-inline-block"></i></a>
+					<ul>
+						<div class="visible-xs visible-sm back-btn">
+							<i class="fa fa-angle-left"></i> Back
+						</div>
+						<li class="menu-item-child">
+							<a href="#">Hello Children</a>
+						</li>
+						<li class="menu-item-child">
+							<a href="#">Hello Children</a>
+						</li>
+						<li class="menu-item-child">
+							<a href="#">Hello Children</a>
+						</li>
+						<li class="menu-item-child">
+							<a href="#">Hello Children</a>
+						</li>
+					</ul>
 				</li>
 				<li class="menu-item">
 					<a href="#">Menu-item</a>
@@ -22,7 +39,7 @@
 				<i class="fa fa-unlock"></i>
 				<div class="tab-content">
 					<div class="close-btn visible-xs visible-sm">
-						<i class="fa fa-times"></i>
+						<i class="fa fa-angle-left"></i> Back
 					</div>
 					<h1>Login</h1>
 
@@ -59,14 +76,14 @@
 				<i class="fa fa-search"></i>
 				<div class="tab-content">
 					<div class="close-btn visible-xs visible-sm">
-						<i class="fa fa-times"></i>
+						<i class="fa fa-angle-left"></i> Back
 					</div>
 					<h1>Search</h1>
 
 					<form action="" class="clear-form">
 						<fieldset>
 							<div class="field">
-								<input type="text" name="search" id="Search" />
+								<input type="text" name="search" id="search" />
 								<label for="search">Your search</label>
 							</div>
 						</fieldset>
