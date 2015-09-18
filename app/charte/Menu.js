@@ -16,16 +16,17 @@ var navSection;
 
 var toggleMenu = function(e) {
 	e.preventDefault();
+	e.stopPropagation();
 
 	var pageWrap = $('.page-wrap');
 	pageWrap.off('click.menu_head');
 	pageWrap.toggleClass('opened');
 
 	if(pageWrap.hasClass('opened')){
-		pageWrap.on('click.menu_head', function(e){
-			//e.stopPropagation();
-			//e.preventDefault();
-			//toggleMenu(e);
+		pageWrap
+			.off('click.menu_head')
+			.on('click.menu_head', function(e){
+			toggleMenu(e);
 		});
 	}
 };

@@ -5,6 +5,7 @@ var ns = require('ns');
 var $ = require('jquery');
 var Menu = require('./Menu');
 require('selectric');
+var Slick = require('../vendor/slick');
 
 ns.docReady.then(function(){
 
@@ -22,6 +23,11 @@ ns.docReady.then(function(){
 		else el.removeClass('empty');
 	}).trigger('blur');
 
+
+	$('.slider').slick({
+		dots:true,
+		arrows:true
+	});
 
 	Menu.init();
 });
