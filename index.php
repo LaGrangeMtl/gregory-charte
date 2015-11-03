@@ -23,14 +23,38 @@
 		<title>Gregory Charte</title>
 	</head>
 	<body>
+		<!-- Menu -->
+		<?php include('inc/menu.php'); ?>
+		<!-- End menu -->
+
 		<div class="page-wrap">
-			<!-- Menu -->
-			<?php include('inc/menu.php'); ?>
-			<!-- End menu -->
+			<div class="menu-btn visible-sm visible-xs">
+				<i class="fa fa-bars"></i> Menu
+			</div>
 
 			<!-- Hero -->
 			<?php include('inc/hero.php'); ?>
 			<!-- End Hero -->
+
+
+			<div class="slider">
+				<div class="slide">
+					<img src="//placeimg.com/1920/600" alt="" />
+				</div>
+				<div class="slide">
+					<img src="//placeimg.com/1920/600" alt="" />
+				</div>
+				<div class="slide">
+					<img src="//placeimg.com/1920/600" alt="" />
+				</div>
+				<div class="slide">
+					<img src="//placeimg.com/1920/600" alt="" />
+				</div>
+				<div class="slide">
+					<img src="//placeimg.com/1920/600" alt="" />
+				</div>
+			</div>
+
 
 			<!-- Button types -->
 			<?php include('inc/button-types.php'); ?>

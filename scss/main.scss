@@ -6,12 +6,15 @@
 @import "common/bootstrap/_grid";
 @import "common/bootstrap/_normalize";
 @import "common/bootstrap/_scaffolding";
+@import "common/bootstrap/_responsive-utilities";
 
 @import "lagrange/utils/_utils";
 
 @import "lagrange/base/_texts";
 @import "lagrange/components/_forms";
 @import "lagrange/components/_selectric";
+@import "lagrange/components/_slick";
+@import "lagrange/components/_slick-theme";
 @import "lagrange/components/_buttons";
 @import "lagrange/components/_cards";
 @import "lagrange/components/_captions";
