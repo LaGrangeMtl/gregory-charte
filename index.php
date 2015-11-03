@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="La Grange">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -39,11 +39,15 @@
 			<!-- Cards -->
 			<?php include('inc/cards.php'); ?>
 			<!-- End cards -->
-			
+
+			<!-- Excerpt -->
+			<?php include('inc/excerpt.php'); ?>
+			<!-- End excerpt -->
+
 			<!-- Blockquotes -->
 			<?php include('inc/blockquotes.php'); ?>
 			<!-- End Blockquotes -->
-			
+
 			<!-- Form styles -->
 			<?php include('inc/forms.php'); ?>
 			<!-- End form styles -->
